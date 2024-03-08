@@ -126,6 +126,14 @@ input {
   align-items: center;
   border: 1px solid rgb(66, 66, 66);
   border-radius: 20px;
+  position: relative;
+}
+
+#location-search-error-text {
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  color: red;
 }
 
 #location-search {

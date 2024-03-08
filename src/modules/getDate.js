@@ -3,8 +3,8 @@ const today = new Date();
 const tomorrow = new Date(today);
 tomorrow.setDate(today.getDate() + 1);
 
-const nextTmr = new Date(tomorrow);
-nextTmr.setDate(tomorrow.getDate() + 1);
+const nextTomorrow = new Date(tomorrow);
+nextTomorrow.setDate(tomorrow.getDate() + 1);
 
 function getDayFormat(dayNumber) {
   if (dayNumber < 0 || dayNumber > 6) {
@@ -40,3 +40,12 @@ function getWeatherDateFormat(date) {
     date.getMonth()
   )} ${date.getDate()} ${date.getFullYear()}`;
 }
+
+export {
+  today,
+  tomorrow,
+  nextTomorrow,
+  getDayFormat,
+  getMonthFormat,
+  getWeatherDateFormat,
+};
