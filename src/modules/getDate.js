@@ -1,16 +1,14 @@
-const today = new Date();
-
-const tomorrow = new Date(today);
-tomorrow.setDate(today.getDate() + 1);
-
-const nextTomorrow = new Date(tomorrow);
-nextTomorrow.setDate(tomorrow.getDate() + 1);
+function getDateRelativeToToday(iteration) {
+  let date = new Date();
+  date.setDate(date.getDate() + iteration); //
+  return date;
+}
 
 function getDayFormat(dayNumber) {
   if (dayNumber < 0 || dayNumber > 6) {
     throw new Error('Not enter value 0-6');
   }
-  const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat'];
+  const days = ['SUN', 'MON', 'TUE', 'WED', 'THR', 'FRI', 'SAT'];
   return days[dayNumber];
 }
 
@@ -19,18 +17,18 @@ function getMonthFormat(monthNumber) {
     throw new Error('Not enter value 0-11');
   }
   const months = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
+    'JAN',
+    'FEB',
+    'MAR',
+    'APR',
+    'MAY',
+    'JUN',
+    'JUL',
+    'AUG',
+    'SEP',
+    'OCT',
+    'NOV',
+    'DEC',
   ];
   return months[monthNumber];
 }
@@ -42,9 +40,7 @@ function getWeatherDateFormat(date) {
 }
 
 export {
-  today,
-  tomorrow,
-  nextTomorrow,
+  getDateRelativeToToday,
   getDayFormat,
   getMonthFormat,
   getWeatherDateFormat,

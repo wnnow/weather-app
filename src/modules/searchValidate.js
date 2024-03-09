@@ -1,3 +1,5 @@
+import { getWeather } from './fetchWeather.js';
+
 const searchSubmitBtn = document.querySelector('#submit-location-btn');
 const form = document.querySelector('#location-form');
 const searchInput = document.querySelector('#location-search');
@@ -11,14 +13,4 @@ searchInput.addEventListener('input', (event) => {
   }
 });
 
-searchSubmitBtn.addEventListener('click', (event) => {
-  event.preventDefault();
-  if (!form.checkValidity()) {
-    searchErrorText.textContent = 'Please enter this field';
-    return;
-  } else {
-    searchErrorText.textContent = '';
-  }
-});
-
-export { searchSubmitBtn };
+export { searchSubmitBtn, form, searchErrorText, searchInput };

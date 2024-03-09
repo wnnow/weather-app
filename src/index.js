@@ -5,4 +5,4 @@ import getWeather from './modules/fetchWeather.js';
 import { searchSubmitBtn } from './modules/searchValidate.js';
 import { test } from './modules/createWeatherCardDOM.js';
 
-test();
+// test();

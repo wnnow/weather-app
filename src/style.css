@@ -166,11 +166,10 @@ input {
   margin-bottom: 16px;
 }
 
-.weather-day-info-container {
-  display: flex;
-  justify-content: space-between;
+.weather-date {
   border-bottom: 1px solid gray;
 }
+
 .weather-info-wrapper {
   display: flex;
   justify-content: space-between;
@@ -200,5 +199,5 @@ input {
 }
 
 .avg-temperature {
-  font-size: 1.75rem;
+  font-size: 2rem;
 }
