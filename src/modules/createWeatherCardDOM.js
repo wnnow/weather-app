@@ -16,9 +16,7 @@ import { displayLoading, hideLoading } from './loading.js';
 const cardContainer = document.querySelector('#weather-card-container');
 
 let weatherInfo;
-async function createWeatherCard(location, day) {
-  weatherInfo = await getWeather(location);
-
+async function createWeatherCard(day) {
   const weatherDetailContainer = document.createElement('div');
   const weatherDate = document.createElement('div');
   const cityName = document.createElement('div');
@@ -103,8 +101,9 @@ function clearWeatherContainer() {
 }
 
 async function loopWeatherCard(iteration) {
+  weatherInfo = await getWeather(searchInput.value);
   for (let index = 0; index < iteration; index++) {
-    createWeatherCard(searchInput.value, index);
+    createWeatherCard(index);
   }
 }
 
