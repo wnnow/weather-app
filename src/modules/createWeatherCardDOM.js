@@ -11,6 +11,7 @@ import {
   getMonthFormat,
   getWeatherDateFormat,
 } from './getDate.js';
+import { displayLoading, hideLoading } from './loading.js';
 
 const cardContainer = document.querySelector('#weather-card-container');
 
@@ -91,6 +92,8 @@ async function createWeatherCard(location, day) {
   weatherInfoWrapper.appendChild(weatherInfoRight);
   weatherDetailContainer.appendChild(weatherInfoWrapper);
   cardContainer.appendChild(weatherDetailContainer);
+
+  hideLoading();
 }
 
 function clearWeatherContainer() {
@@ -98,6 +101,13 @@ function clearWeatherContainer() {
     cardContainer.removeChild(cardContainer.firstChild);
   }
 }
+
+async function loopWeatherCard(iteration) {
+  for (let index = 0; index < iteration; index++) {
+    createWeatherCard(searchInput.value, index);
+  }
+}
+
 searchSubmitBtn.addEventListener('click', (event) => {
   event.preventDefault();
   event.stopPropagation();
@@ -107,8 +117,7 @@ searchSubmitBtn.addEventListener('click', (event) => {
   } else {
     searchErrorText.textContent = '';
   }
+  displayLoading();
   clearWeatherContainer();
-  for (let index = 0; index < 3; index++) {
-    createWeatherCard(searchInput.value, index);
-  }
+  loopWeatherCard(3);
 });
